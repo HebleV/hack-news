@@ -1,20 +1,16 @@
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
-const requestHttp = require('request-promise-native');
+
+const router = require('./routes');
 
 const PORT = 8080;
 const app = express();
 
-
-const baseUrl = 'http://hn.algolia.com/api/v1/';
- const newStoryUrl = `${baseUrl}newest`;
- const storyUrl = `${baseUrl}items/15`;
-
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
-
-app.use(express.static(path.join(__dirname, 'build')));
+// app.use(express.static(path.join(__dirname, 'build')));
 
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
@@ -22,21 +18,12 @@ app.use(function(req, res, next) {
     next();
 });
 
-app.get('/api/v1/items/:id', async (req,res) => {
-    console.log('inside get 2, ', req);
-  try {
-    const response = await requestHttp(`http://hn.algolia.com/api/v1/items/${req.params.id}`);
-    console.log('response:::: ', response);
-  } catch (error) {
-    console.log(error);
-  }
-    res.send({});
-});
+app.use('/api/v1', router);
 
-app.get('*', (req,res) => {
-    console.log('inside get');
-    res.sendFile(path.join(__dirname, "build", "index.html"));
-});
+// app.get('*', (req,res) => {
+//     console.log('inside get');
+//     res.sendFile(path.join(__dirname, "build", "index.html"));
+// });
 
 app.listen(PORT, function() {
     console.log('server listening on port ' + PORT);
