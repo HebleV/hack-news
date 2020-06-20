@@ -1,15 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import { getStoryId } from './services/api';
+import React from 'react';
+import { StoriesContainer } from './containers/StoriesContainer.js'
 
-export const App = () => {
-  const [storyId, setStoryId] = useState([]);
-  useEffect(() => {
-    const fetchStoryId = async () => {
-      const response = await getStoryId();
-      setStoryId(response);
-    }
-    fetchStoryId();
-  }, []);
-
-  return (<p>{JSON.stringify(storyId)}</p>);
-}
+export const App = () => <StoriesContainer />;

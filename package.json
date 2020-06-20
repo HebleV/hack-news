@@ -15,7 +15,8 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
-    "request-promise-native": "^1.0.8"
+    "request-promise-native": "^1.0.8",
+    "styled-components": "^5.1.1"
   },
   "proxy": "http://localhost:8080",
   "scripts": {
