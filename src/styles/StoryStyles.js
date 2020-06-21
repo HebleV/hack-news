@@ -57,7 +57,7 @@ export const StoryMetaElement = styled.span`
 export const StoryText = styled.p`
   font-size:12px;
   display:inline-block;
-  padding:0px 30px;
+  padding:0px 15px;
   a {
     color: #2e2e2c;
     text-decoration: none;

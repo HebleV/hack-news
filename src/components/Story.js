@@ -6,7 +6,7 @@ import { mapTime } from '../mappers/mapTime';
 export const Story = () => {
 
     //Story state
-    const [story, setStory] = useState([]);
+    const [stories, setStory] = useState([]);
 
     //Pagination state
     const [totalPageCount, setTotalPageCount] = useState(0);
@@ -45,13 +45,22 @@ export const Story = () => {
         });
     }, [currentPageCount]);
 
+
+    const handleHide = (story) => () => {
+        console.log(story)
+        stories.filter((objectID) => 
+             objectID !== story.objectID
+            // console.log(s)
+        );
+    }
+
     return (
         <>
-            {story.map(story =>
+            {stories.map(story =>
                 <StoryWrapper data-testid="story" key={story.objectID}>
-                    <StoryText>{story.num_comments}</StoryText>
-                    <StoryText>{voteCount[story.objectID] || 0}</StoryText>
-                    <StoryText>
+                    <StoryText style={{width: 100}}>{story.num_comments}</StoryText>
+                    <StoryText style={{width: 100}}>{voteCount[story.objectID] || 0}</StoryText>
+                    <StoryText style={{width: 100}}>
                         <button onClick={() => increment(story.objectID)}>&#9650;</button>
                     </StoryText>
                     <StoryText>
@@ -63,7 +72,7 @@ export const Story = () => {
                             <StoryMetaElement color="#A9A9A9">posted:</StoryMetaElement> {` `}
                             {mapTime(story.created_at_i)}
                         </span>&nbsp;  &nbsp;
-                    <span>[Hide]</span>
+                    <span><button onClick={handleHide(story)}>Hide</button></span>
                     </StoryText>
                 </StoryWrapper>
             )
