@@ -9,23 +9,15 @@ import {
 
 export const StoriesContainer = () => {
 
-    const [stories, setStories] = useState([]);
-
-    useEffect(() => {
-        getStory().then(data => {
-            setStories(data.hits);
-        });
-    }, []);
-    console.log("xxx", stories);
-
     return (
         <>
             <GlobalStyle />
             <StoriesContainerWrapper data-test-id="stories-container">
-            <h2>Hack-News</h2>
+                <h2>Hack-News</h2>
                 <Header />
                 <Story />
             </StoriesContainerWrapper>
+            
         </>
     )
 };
