@@ -55,7 +55,7 @@ export const Story = () => {
     }
 
     return (
-        <>
+        <> 
             {stories.map(story =>
                 <StoryWrapper data-testid="story" key={story.objectID}>
                     <StoryText style={{width: 100}}>{story.num_comments}</StoryText>
@@ -65,7 +65,7 @@ export const Story = () => {
                     </StoryText>
                     <StoryText>
                         <a href={story.url} target="_blank">{story.title}</a>&nbsp;  &nbsp;
-                    <span data-testid="story-by">
+                    <span data-testid="author">
                             <StoryMetaElement color="#A9A9A9">by:</StoryMetaElement> {story.author}
                         </span>&nbsp;  &nbsp;
                     <span data-testid="story-time">
@@ -80,7 +80,6 @@ export const Story = () => {
             {currentPageCount ? <button onClick={goToPrevious}>Previous</button> : null}
 
             {totalPageCount !== currentPageCount && <button onClick={goToNext}>Next</button>}
-
         </>
     )
 }

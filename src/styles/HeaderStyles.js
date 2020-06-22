@@ -9,6 +9,6 @@ export const HeaderMenu = styled.p`
     display:inline-block;
     padding: 0px 1em;
     font-size:12px;
-    color:#fff;
+    color:#000;
     font-weight:600;
 `;
