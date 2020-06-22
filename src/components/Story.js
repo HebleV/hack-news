@@ -39,7 +39,6 @@ export const Story = () => {
             if (data) {
                 setStory(data.hits || []);
                 const pages = data.nbPages || 0;
-                console.log(data);
                 setTotalPageCount(pages);
             }
         });
@@ -63,7 +62,7 @@ export const Story = () => {
                         <button onClick={() => increment(story.objectID)}>&#9650;</button>
                     </StoryText>
                     <StoryText>
-                        <a href={story.url} target="_blank">{story.title}</a>&nbsp;  &nbsp;
+                        <a href={story.url} target="_blank" rel="noopener noreferrer">{story.title}</a>&nbsp;  &nbsp;
                     <span data-testid="author">
                             <StoryMetaElement color="#A9A9A9">by:</StoryMetaElement> {story.author}
                         </span>&nbsp;  &nbsp;

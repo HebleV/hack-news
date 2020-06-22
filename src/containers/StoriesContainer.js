@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import { getStory } from '../services/api';
+import React from 'react';
 import { Story } from '../components/Story';
 import { Header } from '../components/Header';
 import {

@@ -12,11 +12,69 @@
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <title>Hack News - The latest updates</title>
+    <style type="text/css">
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+      }
+      .navbar {
+        background-color: #ff6600;
+        width:80%;
+        margin: 0 auto;
+      }
+      .navbar h3 {
+        display: inline-block;
+        text-align: center;;
+        padding: 10px;
+        color: black;
+        text-decoration: none;
+      }
+      .navbar p {
+        display:inline-block;
+        padding: 0px 1em;
+        font-size:12px;
+        color:#fff;
+        font-weight:600;
+      }
+      .page-info {
+        padding: 10px;
+        text-align: center;
+      }
+    </style>
   </head>
 
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
+    <div id="root">
+      <h3>Hack News</h3>
+      <div class="navbar">
+        <p>Comments</a>
+        <p>Vote Count</a>
+        <p>Upvote</a>
+        <p>News Details</a>
+      </div>
+      <p class="page-info">
+        Loading...
+      </p>
+    </div>
+
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('worker.js').then(function(registration) {
+            console.log('Worker registration successful', registration.scope);
+          }, function(err) {
+            console.log('Worker registration failed', err);
+          }).catch(function(err) {
+            console.log(err);
+          });
+        });
+      } else {
+        console.log('Service Worker is not supported by browser.');
+      }
+    </script>
+
   </body>
   
 </html>
