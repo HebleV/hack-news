@@ -15,8 +15,7 @@ export const StoriesContainer = () => {
                 <h2>Hack-News</h2>
                 <Header />
                 <Story />
-            </StoriesContainerWrapper>
-            
+            </StoriesContainerWrapper>          
         </>
     )
 };

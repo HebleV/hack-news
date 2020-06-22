@@ -1,5 +1,8 @@
 import React from 'react';
-import { HeaderMenuWrapper, HeaderMenu } from '../styles/HeaderStyles';
+import { 
+    HeaderMenuWrapper, 
+    HeaderMenu, 
+} from '../styles/HeaderStyles';
 
 export const Header = () => {
     return (
