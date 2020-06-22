@@ -47,11 +47,10 @@ export const Story = () => {
 
 
     const handleHide = (story) => () => {
-        console.log(story)
-        stories.filter((objectID) => 
-             objectID !== story.objectID
-            // console.log(s)
+        const newList = stories.filter((item) => 
+            item.objectID !== story.objectID 
         );
+        setStory(newList);
     }
 
     return (
