@@ -45,13 +45,13 @@ export const Story = () => {
         });
     }, [currentPageCount]);
 
-
-    const handleHide = (story) => () => {
-        const newList = stories.filter((item) => 
+        const handleHide = (story) => {
+            const newList = stories.filter((item) => 
             item.objectID !== story.objectID 
         );
-        setStory(newList);
-    }
+            setStory(newList);
+        }
+        
 
     return (
         <> 
@@ -71,7 +71,7 @@ export const Story = () => {
                             <StoryMetaElement color="#A9A9A9">posted:</StoryMetaElement> {` `}
                             {mapTime(story.created_at_i)}
                         </span>&nbsp;  &nbsp;
-                    <span><button onClick={handleHide(story)}>Hide</button></span>
+                    <span><button onClick={() => handleHide(story)}>Hide</button></span>
                     </StoryText>
                 </StoryWrapper>
             )
