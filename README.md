@@ -3,9 +3,9 @@ Clone of Hacker News - <a href="https://news.ycombinator.com/" target="_blank">h
 
 ## Features
 Besides rendering the hacker news data, this has other following features:
-- pagination feature built. Also, the upvote count which will be stored in local storage. 
-- This is a sample hacker news clone. 
-- This is built using creact-react-app.
+- pagination feature built. 
+- Upvote count which will be stored in local storage. 
+- Has the hide feature to hide a story
 
 ## What's inside
 The libraries being used to achieve this are React, styled-components, React-testing-library for testing. 
