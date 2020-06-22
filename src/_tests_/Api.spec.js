@@ -2,7 +2,7 @@ import axios from 'axios';
 import {
   getStory,
 } from '../services/api';
-import { Story, emptyStory } from '../fixtures';
+import { Story } from '../fixtures';
 
 jest.mock('axios');
 

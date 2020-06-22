@@ -72,24 +72,24 @@ export const Story = () => {
                     <StoryText style={{width: 100}}>{story.num_comments}</StoryText>
                     <StoryText style={{width: 100}}>{voteCount[story.objectID] || 0}</StoryText>
                     <StoryText style={{width: 100}}>
-                        <button onClick={() => increment(story.objectID)}>&#9650;</button>
+                        <a href="#" onClick={() => increment(story.objectID)}>&#9650;</a>
                     </StoryText>
                     <StoryText>
                         <a href={story.url} target="_blank" rel="noopener noreferrer">{story.title}</a>&nbsp;  &nbsp;
-                    <span data-testid="author">
+                        <span data-testid="author">
                             <StoryMetaElement color="#A9A9A9">by:</StoryMetaElement> {story.author}
                         </span>&nbsp;  &nbsp;
-                    <span data-testid="story-time">
+                        <span data-testid="story-time">
                             <StoryMetaElement color="#A9A9A9">posted:</StoryMetaElement> {` `}
                             {mapTime(story.created_at_i)}
                         </span>&nbsp;  &nbsp;
-                    <span>
-                        <a href="#" onClick={() => handleHide(story)}>
-                            <StoryMetaElement color="#A9A9A9">[</StoryMetaElement>
+                        <span>
+                            <a href="#" onClick={() => handleHide(story)}>
+                                <StoryMetaElement color="#A9A9A9">[</StoryMetaElement>
                                 &nbsp;Hide&nbsp;
-                            <StoryMetaElement color="#A9A9A9">]</StoryMetaElement>
-                        </a>
-                    </span>
+                                <StoryMetaElement color="#A9A9A9">]</StoryMetaElement>
+                            </a>
+                        </span>
                     </StoryText>
                 </StoryWrapper>
             )
