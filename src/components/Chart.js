@@ -1,9 +1,8 @@
 import React from 'react';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
-import { Container, Row, Col } from 'reactstrap';
 
-export const Chart = ({ voteCount }) => {
+const Chart = ({ voteCount }) => {
     const id = Object.keys(voteCount);
     const votes = Object.values(voteCount);
 
@@ -38,3 +37,5 @@ export const Chart = ({ voteCount }) => {
         </div>
     )
 }
+
+export default Chart;

@@ -21,7 +21,6 @@
     "request-promise-native": "^1.0.8",
     "serve": "^11.3.2"
   },
-  "proxy": "http://localhost:8080",
   "scripts": {
     "now-start": "serve --single ./build",
     "dev-start": "react-scripts start",
