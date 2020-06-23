@@ -16,7 +16,6 @@ test('renders the application', async () => {
 
   const { getByText } = render(<App />);
   await waitForElement(() => [
-    expect(getByText('Hack-News')).toBeTruthy(),
     expect(getByText('Comments')).toBeTruthy(),
     expect(getByText('Vote Count')).toBeTruthy(),
     expect(getByText('Upvote')).toBeTruthy(),

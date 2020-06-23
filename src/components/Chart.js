@@ -4,14 +4,14 @@ import HighchartsReact from 'highcharts-react-official';
 import { Container, Row, Col } from 'reactstrap';
 
 export const Chart = ({ voteCount }) => {
-    const Id = Object.keys(voteCount);
-    const Votes = Object.values(voteCount);
+    const id = Object.keys(voteCount);
+    const votes = Object.values(voteCount);
 
     const options = {
         series: [
             {
                 name: "vote counts",
-                data: Votes
+                data: votes
             }
         ],
         chart: {
@@ -19,7 +19,7 @@ export const Chart = ({ voteCount }) => {
             type: 'line'
         },
         xAxis: {
-            categories: Id,
+            categories: id,
             title: {
                 text: 'Id'
             }
@@ -33,12 +33,8 @@ export const Chart = ({ voteCount }) => {
     }
 
     return (
-        <Container style={{ width: '100%' }} fluid="md">
-            <Row>
-                <Col style={{ borderBottom: '2px solid #ff6600', borderTop: '2px solid #ff6600' }}>
-                    <HighchartsReact highcharts={Highcharts} options={options} />
-                </Col>
-            </Row>
-        </Container>
+        <div style={{ borderBottom: '4px solid #ff6600', borderTop: '4px solid #ff6600' }}>
+            <HighchartsReact highcharts={Highcharts} options={options} />
+        </div>
     )
 }
