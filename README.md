@@ -8,9 +8,9 @@ Besides rendering the hacker news data, this has other following features:
 - Has the hide feature to hide a story
 
 ## What's inside
-The libraries being used to achieve this are React, styled-components, React-testing-library for testing. 
+The libraries being used to achieve this are React, React-Bootstap, React-testing-library for testing. 
 Also, this is deployed on netlify with CI/CD pipeline. Any code changes will lead to automatic deployment on netlify.
-Here is the netlify link <a href="https://inspiring-roentgen-47173a.netlify.app/" target="_blank">Hack News</a>
+Here is the netlify link <a href="https://inspiring-roentgen-47173a.netlify.app/" target="_blank">Hack News</a>.
 The API that was used to fetch data - <a href="https://hn.algolia.com/api" target="_blank">click here</a>
 
 ## Installation & set up

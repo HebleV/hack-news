@@ -5,12 +5,13 @@
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/user-event": "^7.2.1",
-    "antd": "^4.3.4",
     "axios": "^0.19.2",
     "body-parser": "^1.19.0",
     "bootstrap": "^4.5.0",
     "express": "^4.17.1",
     "express-server": "^0.7.0",
+    "highcharts": "^8.1.2",
+    "highcharts-react-official": "^3.0.0",
     "http-proxy-middleware": "^1.0.4",
     "path": "^0.12.7",
     "react": "^16.13.1",
@@ -18,8 +19,7 @@
     "react-scripts": "3.4.1",
     "reactstrap": "^8.4.1",
     "request-promise-native": "^1.0.8",
-    "serve": "^11.3.2",
-    "styled-components": "^5.1.1"
+    "serve": "^11.3.2"
   },
   "proxy": "http://localhost:8080",
   "scripts": {
