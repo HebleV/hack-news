@@ -8,7 +8,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// app.use(express.static(path.join(__dirname, 'build')));
+app.use(express.static(path.join(__dirname, 'build')));
 
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
@@ -17,10 +17,10 @@ app.use(function(req, res, next) {
 });
 
 
-// app.get('*', (req,res) => {
-//     console.log('inside get');
-//     res.sendFile(path.join(__dirname, "build", "index.html"));
-// });
+app.get('*', (req,res) => {
+    console.log('inside get');
+    res.sendFile(path.join(__dirname, "build", "index.html"));
+});
 
 app.listen(PORT, function() {
     console.log('server listening on port ' + PORT);

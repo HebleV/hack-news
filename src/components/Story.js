@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { getStory } from '../services/api';
-import  Chart from './Chart';
-import  Pagination  from './Pagination';
-import  TableHeader  from './TableHeader';
-import  TableBody  from './TableBody';
+import Chart from './Chart';
+import Pagination from './Pagination';
+import TableHeader from './TableHeader';
+import TableBody from './TableBody';
 import { mapTime } from '../mappers/mapTime';
 import { Table, Container, Row, Col } from 'reactstrap';
 
@@ -11,7 +11,7 @@ const Story = () => {
     const [stories, setStory] = useState([]);
     const [totalPageCount, setTotalPageCount] = useState(0);
     const [currentPageCount, setCurrentPageCount] = useState(0);
-    
+
     const intialVoteCount = window.localStorage.getItem('voteCount');
     const currentVoteCount = intialVoteCount ? JSON.parse(intialVoteCount) : {};
     const [voteCount, setVoteCount] = useState(currentVoteCount);
@@ -51,35 +51,33 @@ const Story = () => {
     }
 
     return (
-        <>
-            <Container style={{fontSize: '0.85rem'}}>
-                <Row>
-                    <Col >
-                        <Table responsive size="sm">
+        <Container style={{ fontSize: '0.85rem' }}>
+            <Row>
+                <Col >
+                    <Table responsive size="sm">
                         <TableHeader />
-                        <TableBody 
+                        <TableBody
                             stories={stories}
                             voteCount={voteCount}
                             increment={increment}
                             mapTime={mapTime}
                             handleHide={handleHide}
                         />
-                        </Table>
-                        <Pagination 
-                            currentPageCount={currentPageCount} 
-                            totalPageCount={totalPageCount}
-                            goToNext={goToNext}
-                            goToPrevious={goToPrevious}
-                        />
-                    </Col>
-                </Row>
-                <Row>
-                    <Col >
-                        <Chart voteCount={voteCount} />
-                    </Col>
-                </Row>
-            </Container>
-        </>
+                    </Table>
+                    <Pagination
+                        currentPageCount={currentPageCount}
+                        totalPageCount={totalPageCount}
+                        goToNext={goToNext}
+                        goToPrevious={goToPrevious}
+                    />
+                </Col>
+            </Row>
+            <Row>
+                <Col >
+                    <Chart voteCount={voteCount} />
+                </Col>
+            </Row>
+        </Container>
     )
 }
 
