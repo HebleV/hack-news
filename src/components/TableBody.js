@@ -18,14 +18,14 @@ const TableBody = ({
         <tbody style={{ backgroundColor: '#efebe9' }}>
             {stories.map(story =>
                 <tr key={story.objectID}>
-                    <td>{story.num_comments}</td>
-                    <td>{voteCount[story.objectID] || 0}</td>
-                    <td style={{ cursor: 'pointer' }} onClick={() => increment(story.objectID)}>&#9650;</td>
+                    <td style={{textAlign:'center'}}>{story.num_comments}</td>
+                    <td style={{textAlign:'center'}}>{voteCount[story.objectID] || 0}</td>
+                    <td style={{ cursor: 'pointer',textAlign:'center' }} onClick={() => increment(story.objectID)}>&#9650;</td>
                     <td>
                         <a href={story.url} target="_blank" rel="noopener noreferrer" style={linkStyle}>{story.title}</a>
                         <span style={{ fontSize: '0.75rem' }}>
-                            <span style={{ color: '#A9A9A9' }}>by </span>{story.author}
-                            <span style={{ padding: 5, color: '#A9A9A9' }}>{mapTime(story.created_at_i)}</span>
+                            <span style={{ color: '#76726B' }}>by </span>{story.author}
+                            <span style={{ padding: 5, color: '#76726B' }}>{mapTime(story.created_at_i)}</span>
                             <span style={{ cursor: 'pointer' }} onClick={() => handleHide(story)}>
                                 [ Hide ]
                             </span>

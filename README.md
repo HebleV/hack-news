@@ -6,6 +6,7 @@ Besides rendering the hacker news data, this has other following features:
 - pagination feature built. 
 - Upvote count which will be stored in local storage. 
 - Has the hide feature to hide a story
+- It also has a line chart depicting the vote counts for every Id.
 
 ## What's inside
 The libraries being used to achieve this are React, React-Bootstap, React-testing-library for testing. 

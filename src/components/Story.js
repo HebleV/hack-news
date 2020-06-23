@@ -51,7 +51,7 @@ const Story = () => {
     }
 
     return (
-        <Container style={{ fontSize: '0.85rem' }}>
+        <Container style={{ fontSize: '0.85rem',marginTop:'25px' }}>
             <Row>
                 <Col >
                     <Table responsive size="sm">

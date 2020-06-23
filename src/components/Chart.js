@@ -28,11 +28,10 @@ const Chart = ({ voteCount }) => {
                 text: 'Votes'
             }
         },
-
     }
 
     return (
-        <div style={{ borderBottom: '4px solid #ff6600', borderTop: '4px solid #ff6600' }}>
+        <div style={{ borderBottom: '4px solid #ff6600', borderTop: '4px solid #ff6600',marginBottom:'120px' }}>
             <HighchartsReact highcharts={Highcharts} options={options} />
         </div>
     )
