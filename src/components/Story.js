@@ -33,25 +33,46 @@ const Story = () => {
         window.localStorage.setItem('voteCount', JSON.stringify(count));
     }
 
+    const handleHide = (story) => {
+        const newList = stories.filter((item) =>
+            item.objectID !== story.objectID
+        );
+
+        const getHideObjectId = window.localStorage.getItem('hideObjectId');
+        let hideObjectId = null;
+        
+        if (getHideObjectId) {
+            hideObjectId = JSON.parse(getHideObjectId);
+        } else {
+            hideObjectId = [];
+        }
+
+        hideObjectId.push(story.objectID);
+        window.localStorage.setItem("hideObjectId", JSON.stringify(hideObjectId));
+
+        setStory(newList);
+    }
+
     useEffect(() => {
         getStory(currentPageCount).then(data => {
             if (data) {
-                setStory(data.hits || []);
+                let newStories = data.hits;
+                const hiddenStoryIds = JSON.parse(window.localStorage.getItem('hideObjectId'));
+                if (hiddenStoryIds) {
+                    newStories = newStories.filter((page) =>
+                        !hiddenStoryIds.includes(page.objectID)
+                    );
+                }
+                setStory(newStories || []);
                 const pages = data.nbPages || 0;
                 setTotalPageCount(pages);
             }
         });
     }, [currentPageCount]);
 
-    const handleHide = (story) => {
-        const newList = stories.filter((item) =>
-            item.objectID !== story.objectID
-        );
-        setStory(newList);
-    }
 
     return (
-        <Container style={{ fontSize: '0.85rem',marginTop:'25px' }}>
+        <Container style={{ fontSize: '0.85rem', marginTop: '25px' }}>
             <Row>
                 <Col >
                     <Table responsive size="sm">
