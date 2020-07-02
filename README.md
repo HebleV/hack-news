@@ -1,6 +1,8 @@
 # hack-news
 Clone of Hacker News - <a href="https://news.ycombinator.com/" target="_blank">https://news.ycombinator.com/</a>
 
+<img src="https://media.giphy.com/media/SsN1pr8N7t0LeYx2rX/giphy.gif">
+
 ## Features
 Besides rendering the hacker news data, this has other following features:
 - pagination feature built. 
